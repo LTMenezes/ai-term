@@ -1,31 +1,53 @@
 # AiTerm
 
-AiTerm is an AI-powered shell assistant that helps users perform tasks on their system using shell commands. It leverages the Anthropic API to generate and execute shell commands based on user input.
+AiTerm is an interactive command-line tool that leverages AI to assist users with shell commands and system tasks. It provides a chat-like interface where users can ask questions or request tasks, and the AI responds with appropriate shell commands or information.
 
 ## Features
 
-- Interprets user requests and generates appropriate shell commands
-- Executes commands and displays the output
-- Maintains conversation context for more coherent interactions
-- Handles both task-oriented requests and open-ended questions
+- AI-powered assistance for shell commands and system tasks
+- Interactive command-line interface
+- Executes shell commands with user confirmation
+- Maintains conversation context
+- Supports a wide range of shell-related queries and tasks
 
-## Requirements
+## Prerequisites
 
-- Python 3.6+
-- Anthropic API access
-- Required Python packages (see `requirements.txt`)
+- Python 3.x
+- Anthropic API access (Claude model)
 
-## Setup
+## Installation
 
-1. Clone the repository
-2. Install required packages: `pip install -r requirements.txt`
-3. Set up your Anthropic API credentials in a `.env` file
-4. Run the script: `python chat.py`
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/aiterm.git
+   cd aiterm
+   ```
+
+2. Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Ensure you have set up Google Cloud authentication.
 
 ## Usage
 
-Simply run the script and start interacting with AiTerm. Ask it to perform tasks or ask questions about your system.
+Run the script:
+
+```
+python chat.py
+```
+
+Follow the prompts to interact with the AI assistant. You can ask questions, request tasks, or ask for shell commands. When the AI suggests a command, you'll be prompted to confirm before execution.
+
+## Security Note
+
+Always review suggested commands before execution, especially when dealing with system-level operations.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-[MIT License](LICENSE)
+This project is licensed under the MIT License - see the LICENSE file for details.
