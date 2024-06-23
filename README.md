@@ -2,6 +2,8 @@
 
 AiTerm is an interactive command-line tool that leverages AI to assist users with shell commands and system tasks. It provides a chat-like interface where users can ask questions or request tasks, and the AI responds with appropriate shell commands or information.
 
+Heavily inspired by Taelin's [ChatSH](https://github.com/VictorTaelin/ChatSH).
+
 ## Features
 
 - AI-powered assistance for shell commands and system tasks
