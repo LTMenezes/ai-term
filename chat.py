@@ -1,5 +1,6 @@
 from anthropic import AnthropicVertex
 from dotenv import load_dotenv
+import click
 import os
 import re
 import subprocess
@@ -10,8 +11,14 @@ load_dotenv()
 client = AnthropicVertex(region="europe-west1", project_id="pactohq")
 
 def execute_code(code):
-  result = subprocess.run(code, shell=True, check=True, capture_output=True, encoding='utf-8')
-  return result.stdout;
+  click.echo("Command to be executed:")
+  click.echo(code)
+  user_input = click.prompt("Do you want to execute this command? (y/n): ").lower()
+  if user_input == "y":
+    result = subprocess.run(code, shell=True, check=True, capture_output=True, encoding="utf-8")
+    return result.stdout
+  else:
+    return "Command execution cancelled by user."
 
 def get_shell():
   return execute_code('uname -a && $SHELL --version')
@@ -52,12 +59,12 @@ def send_message(message):
   last_pending_shell_output = ""
 
   response = client.messages.create(
-    max_tokens=1024, #200k max token
+    max_tokens=4096, #200k max token
     system=SYSTEM_PROMPT,
     messages=current_chat,
     model="claude-3-5-sonnet@20240620",
   )
-  click.echo(response.content[0].text)
+  click.echo(click.style(response.content[0].text, fg="cyan"))
   current_chat.append({"role": "assistant", "content": response.content[0].text})
   code = extract_code(response.content[0].text)
   
