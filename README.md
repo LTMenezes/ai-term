@@ -24,13 +24,7 @@ Heavily inspired by Taelin's [ChatSH](https://github.com/VictorTaelin/ChatSH).
    git clone https://github.com/yourusername/aiterm.git
    cd aiterm
    ```
-
-2. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-
-3. Ensure you have set up Google Cloud authentication.
+2. Ensure you have set up Google Cloud authentication.
 
 ## Usage
 
